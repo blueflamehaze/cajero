@@ -1,0 +1,38 @@
+input,
+label {
+  display: block;
+}
+.bg-primary {
+  background-color: rgb(13, 1, 54) !important;
+}
+.text-primary {
+  color: rgb(13, 1, 54) !important;
+}
+.btn-primary {
+  background-color: rgb(13, 1, 54) !important;
+}
+.subtitle {
+  font-size: 1.2rem;
+}
+.bg-secondary {
+  background-color: rgba(197, 195, 195, 0.548) !important;
+}
+.card {
+  border-radius: 1.25rem !important;
+}
+.label {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.login__form {
+  width: 100%;
+  padding: 0.5rem;
+}
+.lock__icon {
+  width: 100px;
+  height: auto;
+  margin: auto;
+}
+.alert__font {
+  font-size: 1rem !important;
+}
