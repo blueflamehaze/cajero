@@ -22,7 +22,57 @@
       <h1>Cajero Automático</h1>
       <p class="subtitle mt-4">¡Bienvenido a BancoMEX!</p>
     </header>
-    <main class="bg-secondary"><p>Este es el home</p></main>
+    <main id="home" class="bg-secondary py-5">
+      <div class="container">
+        <div class="card p-4 rounded-5">
+          <div class="row">
+            <div class="col my-5">
+              <div id="operationsCard" class="text-center rounded-5">
+                <img
+                  id="operationImage"
+                  src="img/money-icon.png"
+                  alt="Money icon"
+                  class="lock__icon mb-3"
+                />
+                <h5 id="helpText" class="text-center text-primary my-2">
+                  ¿Cómo podemos ayudarte hoy?
+                </h5>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-12 col-md-4">
+              <button
+                id="checkBalanceBtn"
+                data-modal="modal-one"
+                class="btn btn-primary w-100 mt-2 py-3"
+              >
+                Consultar saldo
+              </button>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4">
+              <button id="addMoneyBtn" class="btn btn-primary w-100 mt-2 py-3">
+                Ingresar monto
+              </button>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4">
+              <button id="takeMoneyBtn" class="btn btn-primary w-100 mt-2 py-3">
+                Retirar monto
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
+      <div class="modal" id="modal-one">
+        <div class="modal-bg modal-exit"></div>
+        <div class="modal-container">
+          <h1>Amazing Modal</h1>
+          <h2>Pure Vanilla JavaScript</h2>
+          <button class="modal-close modal-exit">X</button>
+        </div>
+      </div>
+    </main>
     <script src="js/home.js"></script>
   </body>
 </html>

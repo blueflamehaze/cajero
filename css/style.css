@@ -2,6 +2,9 @@ input,
 label {
   display: block;
 }
+#home {
+  height: 515px;
+}
 .bg-primary {
   background-color: rgb(13, 1, 54) !important;
 }
@@ -10,6 +13,9 @@ label {
 }
 .btn-primary {
   background-color: rgb(13, 1, 54) !important;
+}
+.btn-primary:hover {
+  background-color: rgb(33, 20, 75) !important;
 }
 .subtitle {
   font-size: 1.2rem;
@@ -35,4 +41,31 @@ label {
 }
 .alert__font {
   font-size: 1rem !important;
+}
+
+.black__div {
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  opacity: 0.96;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30000;
+}
+
+.modal__div {
+  background: #ffffff;
+  margin: 25vh auto 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+}
+.balance {
+  font-size: 4rem;
+  color: #034469;
+  font-weight: 600;
+}
+.add__money__input {
+  display: block;
+  margin: 0 auto;
 }
