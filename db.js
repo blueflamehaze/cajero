@@ -9,14 +9,14 @@ var accounts = [
   {
     id: 2,
     accountNumber: 3466789,
-    password: "Locasf341sd",
+    password: "hndsbasjkmas7",
     name: "Gera",
     saldo: 290,
   },
   {
     id: 3,
     accountNumber: 1235678,
-    password: "Locasf341sd",
+    password: "pass10mdk13",
     name: "Maui",
     saldo: 67,
   },

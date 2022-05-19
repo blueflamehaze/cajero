@@ -72,7 +72,7 @@ function findUser() {
       "isUserOnDb",
       JSON.stringify(isUserOnDb)
     );
-    screenAlert("¡Bienvanido a tu cuenta!");
+    screenAlert("¡Bienvenid@ a tu cuenta!");
     // Enviar el usuuario a una nueva ventana en la que pueda consultar sus operaciones
     window.location = "home.html";
   } else {
