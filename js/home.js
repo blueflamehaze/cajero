@@ -3,6 +3,7 @@ const checkBalanceBtn = document.querySelector("#checkBalanceBtn");
 const addMoneyBtn = document.getElementById("addMoneyBtn");
 const takeMoneyBtn = document.getElementById("takeMoneyBtn");
 const addMoneyForm = document.querySelector("#addMoneyForm");
+const logout = document.querySelector("#logout");
 let currentUser = [];
 let moneyAdded = "";
 let currentBalance;
@@ -22,17 +23,25 @@ document.addEventListener("DOMContentLoaded", () => {
   operationsCard.parentNode.insertBefore(userName, operationsCard.nextSibling);
 });
 
-// Vamos a escuchar el evento click en el botón de checkBalanceBtn, para eso llamamos a la función showBalance
+// Vamos a escuchar el evento click en el botón de checkBalanceBtn, para eso llamamos a la función balanceDialog
 checkBalanceBtn.addEventListener("click", () => {
   balanceDialog("home.html", 500, "Tu saldo es:");
 });
 
+// Vamos a escuchar el evento click en el botón de addMoneyBtn, para eso llamamos a la función addMoneyDialog
 addMoneyBtn.addEventListener("click", () => {
   addMoneyDialog("home.html", 500);
 });
 
+// Vamos a escuchar el evento click en el botón de takeMoneyBtn, para eso llamamos a la función takeMoneyDialog
 takeMoneyBtn.addEventListener("click", () => {
   takeMoneyDialog("home.html", 500);
+});
+
+// Vamos a escuchar el evento click en el botón de logout para simular un cierre de sesión,
+//solo regresamos a la página principal index.html
+logout.addEventListener("click", () => {
+  window.location = "index.html";
 });
 
 // Es la función que va a crear el dialog  para el balance
@@ -87,8 +96,10 @@ function addMoneyDialog(url, width) {
   id="inpuMoney"
   class="form-control my-4 add__money__input w-80"
 />
-<button class="btn btn-primary w-50 mt-2" onclick="addMoney(addMoneyDiv)">Añadir</button>
-
+<div class="d-flex">
+<button class="btn btn-primary w-50 m-3" onclick="addMoney()">Añadir</button>
+<button class="btn btn-primary w-50 m-3" onclick="closeDialog(addMoneyDiv)">Cerrar</button>
+</div>
 </div>
 
 </div>`;
@@ -112,12 +123,21 @@ function addMoney() {
       "El monto ha sido añadido. Tu nuevo saldo es:"
     );
   } else {
-    errorDialog(
-      "home.html",
-      500,
-      "¡Error al ingresar la cantidad!",
-      "No puedes ingresar un monto que suma una cantidad total mayor a $990. Por favor intenta de nuevo"
-    );
+    if (isNaN(moneyAdded)) {
+      errorDialog(
+        "home.html",
+        500,
+        "¡Campo en blanco!",
+        "Para añadir a tu saldo es necesario ingresar una cantidad. Por favor intenta de nuevo."
+      );
+    } else {
+      errorDialog(
+        "home.html",
+        500,
+        "¡Error al ingresar la cantidad!",
+        "No puedes ingresar un monto que suma una cantidad total mayor a $990. Por favor intenta de nuevo."
+      );
+    }
   }
 }
 
@@ -147,8 +167,10 @@ function takeMoneyDialog(url, width) {
   id="takeMoney"
   class="form-control my-4 add__money__input w-80"
 />
-<button class="btn btn-primary w-50 mt-2" onclick="takeMoney()">Retirar</button>
-
+<div class="d-flex">
+<button class="btn btn-primary w-50 m-3" onclick="takeMoney()">Retirar</button>
+<button class="btn btn-primary w-50 m-3" onclick="closeDialog(takeMoneyDiv)">Cerrar</button>
+</div>
 </div>
 
 </div>`;
@@ -172,12 +194,21 @@ function takeMoney() {
       "El monto ha sido retirado. Tu nuevo saldo es:"
     );
   } else {
-    errorDialog(
-      "home.html",
-      500,
-      "¡Error al ingresar la cantidad!",
-      "No puedes retirar un monto que deje una cantidad total menor a $10. Por favor intenta de nuevo"
-    );
+    if (isNaN(moneyTaken)) {
+      errorDialog(
+        "home.html",
+        500,
+        "¡Campo en blanco!",
+        "Para retirar de tu saldo es necesario ingresar una cantidad. Por favor intenta de nuevo."
+      );
+    } else {
+      errorDialog(
+        "home.html",
+        500,
+        "¡Error al ingresar la cantidad!",
+        "No puedes retirar un monto que deje una cantidad total menor a $10. Por favor intenta de nuevo"
+      );
+    }
   }
 }
 

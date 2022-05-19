@@ -57,9 +57,8 @@ function screenAlert(message) {
 // Cerrar alert
 function closeButtton() {
   // Asignar una propiedad a un elemento que estamos seleccionando (propiedad, valor, prioridad)
-  document
-    .getElementById("closeAlert")
-    .style.setProperty("display", "none", "important");
+  let element = document.getElementById("closeAlert");
+  element.remove();
 }
 
 function findUser() {
